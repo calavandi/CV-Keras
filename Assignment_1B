@@ -8,8 +8,7 @@
 	a magnet to determins iron content. It brings out the magnetic nature of an object.
 
 2. Why should we only (well mostly) use 3X3 kernels?
-	3X3 is a standard size of the kernels because it preserves maximum information and information isn't lost isn't scattered a lot. We'll have a smaller number of parameters to deal with if we use
-	smaller kernels and a 3X3 kernel can act as a bigger kernel when stacked.
+	3X3 is a standard size of the kernels because it preserves maximum information and information isn't lost isn't scattered a lot. We'll have a smaller number of parameters to deal with if we use smaller kernels and a 3X3 kernel can act as a bigger kernel when stacked.
 
 3. How many times do we need to perform 3x3 convolution operation to reach 1x1 from 199x199 (show calculations)
 	Since we lose 2 pixels every time a convolution happens, we'll have to run the convolution operation (199-1)/ = 99 times.
