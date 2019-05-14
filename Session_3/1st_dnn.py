@@ -128,7 +128,9 @@ print(y_test[:9])
 layer_dict = dict([(layer.name, layer) for layer in model.layers])
 print(layer_dict)
 
-"""###This block of code shows us what the kernel sees in a particular layer that is passed to it and displays it."""
+"""###This block of code shows us what the kernel sees in a particular layer that is passed to it and displays it.
+###The textures and patterns that the kernel sees are printed in the output cell as shown.
+"""
 
 import numpy as np
 from matplotlib import pyplot as plt
