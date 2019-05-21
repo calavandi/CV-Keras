@@ -1,0 +1,64 @@
+1. How many layers?
+    - The number of convolutional layers determine the receptive field of the image. That is, how much of the total information is each layer in our network seeing. We decide the number of layers based on the end goal and the speed we want.
+
+2. 3x3 convolutions.
+   - We largely use 3x3 convolution as it is the most widely used convolution layer because of its small size, it preserves maximum information and information isn't lost isn't scattered a lot. 
+    We'll have a smaller number of parameters to deal with if we use smaller kernels and a 3X3 kernel can act as a bigger kernel when stacked.
+
+3. Max Pooling.
+  - Maxpooling choses the most dominant feature in a region and selects that.
+    The number of maxpooling layers and the usage of them is usually decided by the end goal. For example, if we're trying to find the most dominant color in an image, we don't care about the number of colors or object in the image. In such a situation we'll have a large number of maxpooling layers.
+
+4. Position of MaxPooling.
+    - Maxpooling layer should usually come after at least 2-3 layers of convolution so that the kernels have sufficient information about the original image and even if we lose a lot of spacial data, we still have some information about the images.
+
+5. How  far should Maxpooling be from predicaiton layer?
+    MaxPooling should not be very close to the prediction layer as it removed a lot of spacial information about the image and will reduce the accuracy of the predication if the Maxpooling layer is too close to the prediction layer.
+
+6. Receptive Field. 
+    - This is basically how much of the original image we are seeing at any given layer. This is mainly helpful in knowing how much of data is being lost.
+    - We need to consider the receptive field to determine the kind accuracy we want and the speed we want.
+
+7. Kernels and how do we decide number of kernels?
+    - Kernels are feature extractors. 
+    - We decide the number of feature extractors based on what we are training, the accuracy we are looking for and the speed we need.
+
+8. Batchnormalization.
+   - Batchnormalization allows the network to learn uniformly throughout the training process by balancing the weights.
+
+9. The distance of Batch Normalization from Prediction.
+    - The batchnormalization layer can come right before the prediction layer. It helps the model learn better, so it shouldn't matter much.
+
+10. When do we introduce DropOut, or when do we know we have some overfitting?
+    - We'll know our model is overfitting if we get really high accuracy for train data and low accuracy for test data or real life example. The reason this happens is, the model would probably be trying to fit the test data perfectly into the training data which will cause inaccuracies while running the model against actual data.
+    Drop outs are basically deactivation of neuron while training the data so that when a particular layer is not active, the other neuron learn extra. This will avoid the problem of overfitting.
+
+11. Number of epochs and how do we decide them?
+    - The more number of epochs, the more the model trains. If we have sufficient number of epochs, our model will reach its best accuracy.
+
+12. When do we stop convolutions and go ahead with a larger kernel or some other alternative (which we have not yet covered)
+    - Once we feel we have enough information about the image and we don't want to unnecessarily add more parameters to our network, we use larger kernel convolution.
+
+13. Batch Size, and effects of batch size.
+    - Batch sizes are the number of image it trains with in each epoch. The larger the batch size, the faster the network learns.
+ 
+14. Softmax.
+    - Softmax is probability like. It uses softmax funtion to give out a number which tells the output of the model. Its very helpful to determine how useful and accurate the model is.
+
+15. Learning rate.
+    - It is the rate at which the model is learning. We expect it to be high in the beginning of training as it needs to learn as much as it can, but as time passes, we need our model to learn more subtle features and aspects. 
+
+16. LR schedule and concept behind it.
+    - LR scheduling is used to tweak the learning rate as epochs pass so that the model can learn better over time.
+
+17. How do we know our network is not going well, comparatively, very early
+    - We'll usually know the performance of our model in the first few iterations itself. If the model is failing to train well in the first few epochs, the model is bound to fail and not perform well in the long run.
+
+18. When to add validation checks?
+    - We add validation checks when we have a large data set and we're expecting a long training time. We do this so that our model validates against the test data during the training phase at each epochs.
+
+
+I need to read up on the other topics mentioned. 
+
+
+
